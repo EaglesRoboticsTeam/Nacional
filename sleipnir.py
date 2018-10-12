@@ -22,62 +22,66 @@ def status():
 def v_left():
     while color[c3] == "Green":
         move(40,40)
-    if color[c3] == "Black":
-        move(-20,-20)
-        sleep(0.4)
-        if color[c2] == "Green":
-            move(100,-100)
-            sleep(2)
-        else:
-            move(40,40)
+    else:
+        if color[c3] == "Black":
+            move(-20,-20)
             sleep(0.4)
-            while color[c2] == "White":
-                move(75,-55)
-            move(-55,75)
-            sleep(0.2)
-            move(-50,-50)
-            sleep(0.3)
+            if color[c2] == "Green":
+                move(100,-100)
+                sleep(2)
+            else:
+                move(40,40)
+                sleep(0.4)
+                while color[c2] == "White":
+                    move(75,-55)
+                else:
+                    move(-55,75)
+                    sleep(0.2)
+                    move(-50,-50)
+                    sleep(0.3)
 
 def v_right():
     while color[c2] == "Green":
         move(40,40)
-    if color[c2] == "Black":
-        move(-20,-20)
-        sleep(0.4)
-        if color[c3] == "Green":
-            move(100,-100)
-            sleep(2)
-        else:
-            move(40,40)
+    else:
+        if color[c2] == "Black":
+            move(-20,-20)
             sleep(0.4)
-            while color[c3] == "White":
-                move(-55,75)
-            move(75,-55)
-            sleep(0.2)
-            move(-50,-50)
-            sleep(0.3)
+            if color[c3] == "Green":
+                move(100,-100)
+                sleep(2)
+            else:
+                move(40,40)
+                sleep(0.4)
+                while color[c3] == "White":
+                    move(-55,75)
+                else:
+                    move(75,-55)
+                    sleep(0.2)
+                    move(-50,-50)
+                    sleep(0.3)
 
 def ponta_esc():
     if color[c3] == "Black":
-        move(40,40)
-        sleep(0.3)
-        while color[c2] == "White":
-            move(75,-55)
-        move(-55,75)
+        move(70,70)
         sleep(0.2)
+        move(80,-55)
+        sleep(0.9)
         move(-50,-50)
-        sleep(0.3)
+        sleep(0.1)
+    else:
+        pass
 
 def ponta_dir():
     if color[c2] == "Black":
-        move(40,40)
-        sleep(0.3)
-        while color[c3] == "White":
-            move(-55,75)
-        move(75,-55)
+        move(70,70)
         sleep(0.2)
+        move(-55,80)
+        sleep(0.9)
         move(-50,-50)
-        sleep(0.3)
+        sleep(0.1)
+    else:
+        pass
 
 try:
     while True:
@@ -92,7 +96,7 @@ try:
             elif color[c2] == "Green":
                 v_right()
             elif color[c4] == "Black":
-                ponta_esc()
+                ponta_esc()        
             elif color[c1] == "Black":
                 ponta_dir()
                 
